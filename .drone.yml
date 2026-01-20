@@ -1,0 +1,54 @@
+# Drone CI/CD配置：产品说明文档自动发布
+kind: pipeline
+type: docker
+name: product-manual-deploy
+
+# 触发条件：仅main分支push或tag推送时触发
+trigger:
+  branch:
+    - main
+  event:
+    - push
+    - tag
+
+# 步骤1：拉取代码+安装依赖
+steps:
+  - name: prepare
+    image: python:3.10
+    commands:
+      - pip install mkdocs mkdocs-material  # 安装MkDocs及主题
+      - mkdocs --version  # 验证安装
+
+  # 步骤2：构建静态文档
+  - name: build-docs
+    image: python:3.10
+    commands:
+      - mkdocs build --site-dir site  # 构建静态文件到site目录
+
+  # 步骤3：部署到GitHub Pages（需配置GITHUB_TOKEN）
+  - name: deploy-to-gh-pages
+    image: alpine/git
+    environment:
+      GITHUB_TOKEN:
+        from_secret: github_token  # Drone中配置的秘钥（GitHub个人访问令牌）
+    commands:
+      - cd site
+      - git init
+      - git config --global user.name "Drone CI"
+      - git config --global user.email "drone@example.com"
+      - git add .
+      - git commit -m "Deploy docs by Drone: ${DRONE_COMMIT_SHA}"
+      - git push --force "https://${GITHUB_TOKEN}@github.com/你的用户名/product-manual.git" master:gh-pages
+
+# 步骤4：打版本标签（可选，用于追溯发布版本）
+  - name: tag-release
+    image: alpine/git
+    environment:
+      GITHUB_TOKEN:
+        from_secret: github_token
+    commands:
+      - git tag -a v${DRONE_BUILD_NUMBER} -m "Release v${DRONE_BUILD_NUMBER}: ${DRONE_COMMIT_MESSAGE}"
+      - git push origin v${DRONE_BUILD_NUMBER}
+    when:
+      event: push
+      branch: main

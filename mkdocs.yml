@@ -1,0 +1,43 @@
+# 站点基础信息
+site_name: 产品使用说明
+site_description: 规范化的产品使用文档
+site_url: https://你的用户名.github.io/product-manual/
+
+# 主题配置（material主题支持菜单折叠、搜索等）
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.expand  # 菜单展开
+    - navigation.tabs    # 顶部标签页
+    - search.suggest     # 搜索建议
+    - search.highlight   # 搜索高亮
+    - search.share       # 搜索结果分享
+
+# 核心：菜单管理配置（与docs目录结构一一对应）
+nav:
+  - 首页: index.md                  # 一级菜单：首页
+  - 快速开始:                       # 一级菜单：快速开始（折叠菜单）
+    - 安装步骤: 快速开始/安装.md     # 二级菜单
+    - 首次使用: 快速开始/首次使用.md # 二级菜单
+  - 功能说明:                       # 一级菜单：功能说明
+    - 核心功能: 功能说明/核心功能.md
+    - 高级配置: 功能说明/高级配置.md
+  - 常见问题: faq.md                # 可随时新增菜单项
+
+# 文档目录（指定docs为根目录）
+docs_dir: docs
+
+# 插件配置
+plugins:
+  - search  # 搜索插件
+
+# 扩展配置
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/你的用户名
+
+# 自定义 CSS
+extra_css:
+  - stylesheets/extra.css

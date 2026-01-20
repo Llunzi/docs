@@ -1,0 +1,54 @@
+/* 自定义样式 */
+:root {
+  --md-primary-fg-color: #2563eb;
+  --md-primary-fg-color--light: #3b82f6;
+  --md-primary-fg-color--dark: #1d4ed8;
+}
+
+/* 表格样式优化 */
+.md-typeset table:not([class]) {
+  font-size: 0.875em;
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  padding: 0.5em 0.75em;
+}
+
+/* 代码块样式优化 */
+.md-typeset pre {
+  font-size: 0.875em;
+}
+
+/* 图片居中 */
+.md-typeset img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 页脚样式 */
+.md-footer {
+  background-color: #1e293b;
+}
+
+.md-footer-meta {
+  background-color: #0f172a;
+}
+
+/* 导航栏样式 */
+.md-header {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* 搜索框样式 */
+.md-search__form {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 响应式设计优化 */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background-color: var(--md-primary-fg-color);
+  }
+}
