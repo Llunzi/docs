@@ -492,85 +492,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        方式一：直接下载安装包
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="方式一：直接下载安装包">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        macOS
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linux
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        方式二：使用包管理器
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="方式二：使用包管理器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        命令行安装（推荐）
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        验证安装
+        安装方式
       
     </span>
   </a>
@@ -788,22 +710,25 @@
 <li>内存：至少 4GB RAM</li>
 <li>存储：至少 1GB 可用空间</li>
 </ul>
-<h2 id="_3">方式一：直接下载安装包</h2>
-<h3 id="windows">Windows</h3>
+<h2 id="_3">安装方式</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">直接下载安装包</label><label for="__tabbed_1_2">使用包管理器</label><label for="__tabbed_1_3">验证安装</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Windows</strong></p>
 <ol>
 <li>访问产品官网下载页面</li>
 <li>下载 Windows 安装包（.exe 文件）</li>
 <li>双击安装包，按照向导完成安装</li>
 <li>安装完成后，从开始菜单启动产品</li>
 </ol>
-<h3 id="macos">macOS</h3>
+<p><strong>macOS</strong></p>
 <ol>
 <li>访问产品官网下载页面</li>
 <li>下载 macOS 安装包（.dmg 文件）</li>
 <li>打开 .dmg 文件，将产品图标拖拽到 Applications 文件夹</li>
 <li>从 Launchpad 或 Applications 文件夹启动产品</li>
 </ol>
-<h3 id="linux">Linux</h3>
+<p><strong>Linux</strong></p>
 <ol>
 <li>访问产品官网下载页面</li>
 <li>下载 Linux 安装包（.deb 或 .rpm 文件）</li>
@@ -811,18 +736,29 @@
 <li>Debian/Ubuntu：<code>sudo dpkg -i product.deb</code></li>
 <li>CentOS/RHEL：<code>sudo rpm -ivh product.rpm</code></li>
 </ol>
-<h2 id="_4">方式二：使用包管理器</h2>
-<h3 id="_5">命令行安装（推荐）</h3>
-<pre><code class="language-bash"># 使用 npm 安装
-npm install -g product-name
-
-# 或者使用 yarn 安装
-yarn global add product-name
-</code></pre>
-<h2 id="_6">验证安装</h2>
+</div>
+<div class="tabbed-block">
+<p><strong>命令行安装（推荐）</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 使用 npm 安装</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>product-name
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 或者使用 yarn 安装</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>yarn<span class="w"> </span>global<span class="w"> </span>add<span class="w"> </span>product-name
+</code></pre></div>
+<p><strong>Docker 安装</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 拉取镜像</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>docker<span class="w"> </span>pull<span class="w"> </span>product-name:latest
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 运行容器</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>product-name:latest
+</code></pre></div>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
 <p>安装完成后，打开终端（或命令提示符），输入以下命令验证安装：</p>
-<pre><code class="language-bash">product --version
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>product<span class="w"> </span>--version
+</code></pre></div>
 <p>如果显示版本号，则说明安装成功。</p>
 
 
